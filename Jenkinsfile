@@ -17,18 +17,20 @@ pipeline {
  }
    
    options {
-                timeout(time: 1, unit: 'HOURS') 
+                timeout(time: 1, unit: 'HOURS')
                 disableConcurrentBuilds()
-   }            ansiColor('xtrem')
+          }     ansiColor('xtrem')
 
     stages {
    
      stage('get version'){
-        script {
-        def jsonfile = readJSON file: 'package.json'
+        steps {
+         script {
+                def jsonfile = readJSON file: 'package.json'
                 versioncheck = jsonfile.version
                 echo "currentversion is ${versioncheck}"
             }
+     }
      }
      stage('checkout_from_scm') {
     //   when {
