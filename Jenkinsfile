@@ -1,5 +1,9 @@
 pipeline {
- agent any
+ agent {
+    node {
+        label 'jenkins-agent-1'
+    }
+ }
  environment {
       versioncheck = ''
  }
@@ -20,9 +24,14 @@ pipeline {
                 timeout(time: 1, unit: 'HOURS')
                 ansiColor('xtrem')
            }
+    
 
     stages {
-   
+    //  stage('checkout_from_scm') {
+    //  steps {
+    //      git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Mygit-Naresh/catalogue.git'
+    //    }
+    // }
      stage('get version'){
         steps {
          script {
@@ -32,25 +41,18 @@ pipeline {
             }
      }
      }
-     stage('checkout_from_scm') {
-    //   when {
-    //     expression { environment == "PROD" }
-
-    // }
-       steps {
-         git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Mygit-Naresh/catalogue.git'
-       }
-     
-}
-     stage('DEV') {
+   
+     stage('build the code using') {
         steps {
-     echo "${DEV}"
+         sh """
+            npm install
+         """
         }
      }
 }
   post {
    always {
-      echo "final execution"
+      echo "Check you status below failure or success"
    }
     failure {
         echo "your build failed"
