@@ -53,7 +53,8 @@ pipeline {
         steps {
            sh """ 
            ls -la
-           
+           zip -r -q  /home/centos/cat/catalogue.zip *  -x "." -x ".git" -x "Jenkinsfile" -x  "*.zip"
+           ls -ltr
            """
         }
      }
