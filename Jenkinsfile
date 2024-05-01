@@ -27,11 +27,11 @@ pipeline {
     
 
     stages {
-    //  stage('checkout_from_scm') {
-    //  steps {
-    //      git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Mygit-Naresh/catalogue.git'
-    //    }
-    // }
+     stage('checkout_from_scm') {
+     steps {
+         git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Mygit-Naresh/catalogue.git'
+       }
+    }
      stage('get version'){
         steps {
          script {
@@ -42,11 +42,16 @@ pipeline {
      }
      }
    
-     stage('build the code using') {
+     stage('build the code using npm') {
         steps {
          sh """
             npm install
          """
+        }
+     }
+     stage('zip files and folders from catalogue') {
+        steps {
+            ls -la
         }
      }
 }
