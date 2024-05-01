@@ -16,9 +16,9 @@ pipeline {
 //         choice(choices: 'US-EAST-1\nUS-WEST-2', description: 'What AWS region?', name: 'choiceExample')
 //         password(defaultValue: "Password", description: "Password Parameter", name: "passwordExample")
 //     }
- parameters {
-      choice(choices: 'PROD\nDEV', description: 'Choose PROD or DEV?', name: 'choice')
- }
+//  parameters {
+//       choice(choices: 'PROD\nDEV', description: 'Choose PROD or DEV?', name: 'choice')
+//  }
    
    options {
                 timeout(time: 1, unit: 'HOURS')
