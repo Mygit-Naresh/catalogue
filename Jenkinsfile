@@ -62,6 +62,7 @@ pipeline {
   post {
    always {
       echo "Check you status below failure or success"
+      cleanWs()
    }
     failure {
         echo "your build failed"
