@@ -51,7 +51,10 @@ pipeline {
      }
      stage('zip files and folders from catalogue') {
         steps {
-            ls -la
+           sh """ 
+           ls -la
+           
+           """
         }
      }
 }
