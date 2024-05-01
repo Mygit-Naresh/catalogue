@@ -69,7 +69,7 @@ pipeline {
     }
     success {
         echo "your build is success thumbs up"
-
+        deleteDir()
     }
   }
 }
