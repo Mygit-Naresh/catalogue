@@ -6,7 +6,7 @@ pipeline {
  }
  environment {
       versioncheck = ''
-      nexus_url = 'https://172.31.16.69:8081'
+      nexus_url = '172.31.16.69:8081'
  }
 
 //   parameters {
