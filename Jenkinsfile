@@ -70,7 +70,7 @@ pipeline {
         repository: 'catalogue',
         credentialsId: 'nexus-auth',
         artifacts: [
-            [artifactId: projectName,
+            [artifactId: useterraform,
              classifier: '',
              file: '/home/centos/cat/catalogue.zip',
              type: 'zip']
