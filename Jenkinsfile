@@ -80,7 +80,7 @@ pipeline {
   }  
         
      }
-}
+
  stage ('catalogue-deploy') {
             steps {
                 build job: 'catalogue-deploy',  propagate: true, wait: true parameters: [
@@ -103,4 +103,6 @@ pipeline {
   }
 }
 }
+}
+
 
