@@ -27,11 +27,11 @@ pipeline {
     
 
     stages {
-     stage('checkout_from_scm') {
-     steps {
-         git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Mygit-Naresh/catalogue.git'
-       }
-    }
+   //   stage('checkout_from_scm') {
+   //   steps {
+   //       git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Mygit-Naresh/catalogue.git'
+   //     }
+   //  }
      stage('get version'){
         steps {
          script {
@@ -73,9 +73,9 @@ pipeline {
                   classifier: '',
                   file: "/home/centos/cat/catalogue.zip",
                   type: 'zip']
-        ]
-            
-     )
+                  ]
+               )
+               
      }  
         
      }
@@ -83,14 +83,14 @@ pipeline {
   post {
    always {
       echo "Check you status below failure or success"
-      
+      deleteDir()
    }
     failure {
         echo "your build failed"
     }
     success {
         echo "your build is success thumbs up"
-        deleteDir()
+        
     }
   }
 }
