@@ -63,7 +63,7 @@ pipeline {
          nexusArtifactUploader(
                nexusVersion: 'nexus3',
                protocol: 'http',
-               nexusUrl: "http://172.31.16.69:8081/repository/catalogue/",
+               nexusUrl: 'http://172.31.16.69:8081',
                groupId: 'com.useterraform',
                version: version,
                repository: 'catalogue',
