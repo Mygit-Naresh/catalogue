@@ -33,6 +33,13 @@ pipeline {
    //       git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Mygit-Naresh/catalogue.git'
    //     }
    //  }
+   stage ('Invoke_catalog-deploy') {
+            steps {
+                build job: 'catalog-deploy', parameters: [
+                string(name: 'version', value: "${versioncheck}")
+                string(name: 'environment', value: "dev")
+                ]
+            }
      stage('get version'){
         steps {
          script {
