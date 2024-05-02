@@ -59,7 +59,7 @@ pipeline {
         }
      }
       stage('Deploy artifact to nexus') {
-        steps {
+        
            nexusArtifactUploader(
         nexusVersion: 'nexus3',
         protocol: 'http',
@@ -75,7 +75,7 @@ pipeline {
              type: 'zip']
         ]
      )
-        }
+        
      }
 }
   post {
