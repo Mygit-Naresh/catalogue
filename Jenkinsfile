@@ -89,6 +89,8 @@ pipeline {
 
                 ]
             }
+   }
+    } 
   post {
    always {
       echo "Check you status below failure or success"
@@ -103,7 +105,7 @@ pipeline {
     }
   }
 }
-}
-}
+
+
 
 
