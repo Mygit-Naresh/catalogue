@@ -71,7 +71,7 @@ pipeline {
                 artifacts: [
                   [artifactId: useterraform,
                   classifier: '',
-                  file: "/home/centos/cat/catalogue.zip",
+                  file: '/home/centos/cat/catalogue.zip',
                   type: 'zip']
                   ]
                )
