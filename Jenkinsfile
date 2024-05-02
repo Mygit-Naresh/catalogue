@@ -58,7 +58,7 @@ pipeline {
            """
         }
      }
-      stage('Deploy artifact to nexus') {
+      stage('publish artifact to nexus') {
         steps {
          nexusArtifactUploader(
                nexusVersion: 'nexus3',
@@ -71,7 +71,7 @@ pipeline {
                 artifacts: [
                   [artifactId: useterraform,
                   classifier: '',
-                  file: '/home/centos/cat/catalogue.zip',
+                  file: "/home/centos/cat/catalogue.zip",
                   type: 'zip']
         ]
             
