@@ -66,7 +66,7 @@ pipeline {
         protocol: 'http',
         nexusUrl: "${nexus_url}",
         groupId: 'com.useterraform',
-        version: version,
+        version: "${versioncheck}",
         repository: 'catalogue',
         credentialsId: 'nexus-auth',
         artifacts: [
