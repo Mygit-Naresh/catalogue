@@ -59,7 +59,7 @@ pipeline {
         }
      }
       stage('Deploy artifact to nexus') {
-         steps {
+        
           script {
            nexusArtifactUploader(
         nexusVersion: 'nexus3',
@@ -77,7 +77,7 @@ pipeline {
         ]
      )
      }  
-        }
+        
      }
 }
   post {
