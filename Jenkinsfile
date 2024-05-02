@@ -60,9 +60,8 @@ pipeline {
      }
       stage('Deploy artifact to nexus') {
         steps {
-         
-            nexusArtifactUploader(
-              nexusVersion: 'nexus3',
+         nexusArtifactUploader(
+               nexusVersion: 'nexus3',
                protocol: 'http',
                nexusUrl: 'http://172.31.16.69:8081/repository/catalogue/',
                groupId: 'com.useterraform',
@@ -72,9 +71,10 @@ pipeline {
                 artifacts: [
                   [artifactId: useterraform,
                   classifier: '',
-                  file: 'catalogue.zip',
+                  file: '/home/centos/cat/catalogue.zip',
                   type: 'zip']
         ]
+            
      )
      }  
         
