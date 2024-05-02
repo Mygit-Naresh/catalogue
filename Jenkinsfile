@@ -83,7 +83,7 @@ pipeline {
 
  stage ('catalogue-deploy') {
             steps {
-                build job: 'catalogue-deploy',  propagate: true, wait: true parameters: [
+                build job: 'catalogue-deploy',  propagate: true, wait: true, parameters [
                 string(defaultValue: "${versioncheck}" , description: 'What is version?', name: "version")
                 string(defaultValue: "dev", description: 'What is environment?', name: "environment")
                 ]
