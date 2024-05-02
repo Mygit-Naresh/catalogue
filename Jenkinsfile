@@ -33,13 +33,7 @@ pipeline {
    //       git branch: 'main', changelog: false, poll: false, url: 'https://github.com/Mygit-Naresh/catalogue.git'
    //     }
    //  }
-   stage ('Invoke_catalog-deploy') {
-            steps {
-                build job: 'catalog-deploy', parameters: [
-                string(name: 'version', value: "${versioncheck}")
-                string(name: 'environment', value: "dev")
-                ]
-            }
+    
      stage('get version'){
         steps {
          script {
@@ -87,6 +81,13 @@ pipeline {
         
      }
 }
+ stage ('catalogue-deploy') {
+            steps {
+                build job: 'catalogue-deploy',  propagate: true, wait: true parameters: [
+                string(defaultValue: "${versioncheck}" , description: 'What is version?', name: "version")
+                string(defaultValue: "dev", description: 'What is environment?', name: "environment")
+                ]
+            }
   post {
    always {
       echo "Check you status below failure or success"
@@ -100,5 +101,6 @@ pipeline {
         
     }
   }
+}
 }
 
