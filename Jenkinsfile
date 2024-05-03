@@ -81,15 +81,15 @@ pipeline {
         
      }
 
-//  stage ('catalogue-deploy') {
-//             steps {
-//                 build job: 'catalogue-deploy',  wait: true, parameters: [
-//                 string(name: 'version', value: "${versioncheck}"),
-//                  string(name: 'environment', value: "dev")
+ stage ('catalogue-deploy') {
+            steps {
+                build job: 'catalogue-deploy',  wait: true, parameters: [
+                string(name: 'version', value: "${versioncheck}"),
+                 string(name: 'environment', value: "dev")
 
-//                 ]
-//             }
-//    }
+                ]
+            }
+   }
     } 
   post {
    always {
