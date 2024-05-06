@@ -63,7 +63,7 @@ pipeline {
 stage('sonar scanning') {
      
      steps {
-        
+        sonar-scanner
     }
 }
 
