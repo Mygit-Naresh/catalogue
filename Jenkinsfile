@@ -1,2 +1,6 @@
+#!groovy
 @Library('roboshop-shared-library') _
-nodejsVM.catalogue()
+def configMap = [
+    application: "nodejsVM",
+    component: "catalogue"
+]
