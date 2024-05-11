@@ -4,3 +4,4 @@ def configMap = [
     application: "nodejsVM",
     component: "catalogue"
 ]
+nodejsVM.call()
