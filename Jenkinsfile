@@ -1,1 +1,1 @@
-@Library('rosboshop-shared-library') _
+@Library('roboshop-shared-library') _
